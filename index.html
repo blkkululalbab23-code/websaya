@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Absensi Guru</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #2563eb;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+h1 {
+    text-align: center;
+    color: #2563eb;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 13px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>👨‍🏫 ABSENSI GURU</h1>
+
+<form
+    action="https://script.google.com/macros/s/AKfycbwJs-JCWQJzcYYba6ui4z8gPKgcLxOxI9nYr9G5J-Y8kO2v7D0H0muET8lsG_3x7IqD/exec"
+    method="POST"
+>
+
+<label>Nama Guru</label>
+
+<input
+    type="text"
+    name="nama"
+    placeholder="Masukkan nama guru"
+    required
+>
+
+<label>Tanggal</label>
+
+<input
+    type="date"
+    name="tanggal"
+    id="tanggal"
+    required
+>
+
+<label>Status</label>
+
+<select name="status">
+    <option value="Hadir">Hadir</option>
+    <option value="Izin">Izin</option>
+    <option value="Sakit">Sakit</option>
+</select>
+
+<input
+    type="hidden"
+    name="jam"
+    id="jam"
+>
+
+<button type="submit">
+    💾 SIMPAN ABSENSI
+</button>
+
+</form>
+
+</div>
+
+<script>
+
+function waktuSekarang() {
+
+    const sekarang = new Date();
+
+    document.getElementById("tanggal").value =
+        sekarang.toISOString().split("T")[0];
+
+    document.getElementById("jam").value =
+        sekarang.toLocaleTimeString("id-ID");
+
+}
+
+waktuSekarang();
+
+</script>
+
+</body>
+</html>
